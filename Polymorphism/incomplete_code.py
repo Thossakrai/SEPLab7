@@ -39,15 +39,12 @@ class Train(Transportation) :
       return self.numStation * self.cost
 
 class BTS(Transportation):
-
    def __init__(self, start, end, distance):
       Transportation.__init__(self, start, end, distance)
 
    def find_cost( self ):
       return self.distance * 10
 
-   def  StationAmount(self):
-      return 2
 
 # main program
 
