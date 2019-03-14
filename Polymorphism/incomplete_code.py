@@ -12,6 +12,9 @@ class Transportation(object):
       """Abstract method; derived classes must override"""
       raise NotImplementedError
 
+   def StationAmount(self):
+      raise NotImplementedError
+
 
 class Walk( Transportation ):
 
@@ -22,7 +25,21 @@ class Walk( Transportation ):
       return 0
 
 
-   
+
+class BTS(Transportation):
+
+   def __init__(self, start, end, distance):
+      Transportation.__init__(self, start, end, distance)
+
+   def find_cost( self ):
+      return self.distance * 10
+
+   def  StationAmount(self):
+      return 2
+
+
+
+
 # main program
 
 travel_cost = 0
